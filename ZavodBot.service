@@ -1,0 +1,19 @@
+[Unit]
+Description=Zavod Bot
+After=network.target
+
+[Service]
+User=igor
+Group=igor
+
+WorkingDirectory=/home/igor2
+Environment="PYTHONPATH=/home/igor2"
+ExecStart=/home/igor2/ZavodBot/.venv/bin/python /home/igor2/ZavodBot/test.py
+
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
+
+# sudo cp /home/igor/ZavodBot/ZavodBot.service /etc/systemd/system/ZavodBot.service
